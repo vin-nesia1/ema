@@ -28,7 +28,7 @@ export default async function handler(
   try {
     // Kirim email menggunakan Resend
     const { data, error } = await resend.emails.send({
-      from: 'noreply@yourdomain.com', // Ganti dengan domain yang sudah diverifikasi di Resend
+      from: 'onboarding@resend.dev', // Domain sandbox Resend (bisa langsung pakai)
       to: [email],
       subject: 'Test Email dari Next.js',
       html: `
