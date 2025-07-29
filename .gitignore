@@ -31,3 +31,7 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Keep public folder but ignore specific files if needed
+# public/uploads/
+# public/temp/
