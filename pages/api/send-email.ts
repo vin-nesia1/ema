@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Resend } from 'resend';
 
-// Inisialisasi Resend client
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Inisialisasi Resend client hanya jika API key tersedia
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,8 +13,8 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Validasi API key
-  if (!process.env.RESEND_API_KEY) {
+  // Validasi API key dan Resend client
+  if (!process.env.RESEND_API_KEY || !resend) {
     return res.status(500).json({ error: 'RESEND_API_KEY tidak ditemukan di environment variables' });
   }
 
