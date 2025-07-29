@@ -1,0 +1,2 @@
+# File ini memastikan folder public/ tetap ada di Git
+# Folder public/ diperlukan untuk static assets Next.js
