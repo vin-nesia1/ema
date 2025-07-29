@@ -2,10 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // Pastikan API routes tidak di-prerender
-  experimental: {
-    outputFileTracingRoot: undefined,
-  },
+  // Konfigurasi untuk Vercel deployment
+  output: 'standalone',
+  // Pastikan public directory ada
+  distDir: '.next',
 }
 
 module.exports = nextConfig
