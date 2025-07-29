@@ -1,1 +1,8 @@
+# Mengabaikan file environment lokal
 .env.local
+
+# Mengabaikan file build dan lainnya
+node_modules/
+dist/
+build/
+.next/
